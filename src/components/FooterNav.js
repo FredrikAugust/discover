@@ -4,8 +4,9 @@ import Footer from 'grommet/components/Footer';
 import Box from 'grommet/components/Box';
 import Paragraph from 'grommet/components/Paragraph';
 import Menu from 'grommet/components/Menu';
-import Anchor from 'grommet/components/Anchor';
 import Title from 'grommet/components/Title';
+
+import LinkAnchor from './LinkAnchor';
 
 const FooterNav = () => (
   <Footer justify='between'>
@@ -18,15 +19,9 @@ const FooterNav = () => (
       <Menu direction='row'
         size='small'
         dropAlign={{'right': 'right'}}>
-        <Anchor path='/support'>
-          Support
-        </Anchor>
-        <Anchor path='/contact'>
-          Contact
-        </Anchor>
-        <Anchor path='/about'>
-          About
-        </Anchor>
+        <LinkAnchor to='/support'>Support</LinkAnchor>
+        <LinkAnchor to='/contact'>Contact</LinkAnchor>
+        <LinkAnchor to='/about'>About</LinkAnchor>
       </Menu>
     </Box>
   </Footer>
