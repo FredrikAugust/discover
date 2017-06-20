@@ -5,13 +5,12 @@ import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 import Search from 'grommet/components/Search';
 import Menu from 'grommet/components/Menu';
-import Actions from 'grommet/components/icons/base/Actions';
+import MenuIcon from 'grommet/components/icons/base/Menu';
 
 const Nav = () => {
   return (
     <Header
-      large={true}
-      pad={{horizontal: 'medium'}}>
+      fixed={true}>
       <Title>Discover</Title>
       <Box flex={true}
         justify='end'
@@ -22,7 +21,7 @@ const Nav = () => {
           size='medium'
           placeHolder='Search for projects'
           dropAlign={{'right': 'right'}} />
-        <Menu icon={<Actions />}
+        <Menu icon={<MenuIcon />}
           dropAlign={{'right': 'right'}}>
         </Menu>
       </Box>
