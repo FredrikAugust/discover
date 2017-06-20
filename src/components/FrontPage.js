@@ -5,13 +5,11 @@ import ProjectHighlight from './ProjectHighlight';
 
 import Article from 'grommet/components/Article';
 
-const FrontPage = () => {
-  return (
-    <Article>
-      <FrontPageHero />
-      <ProjectHighlight />
-    </Article>
-  );
-};
+const FrontPage = () => (
+  <Article>
+    <FrontPageHero />
+    <ProjectHighlight />
+  </Article>
+);
 
 export default FrontPage;

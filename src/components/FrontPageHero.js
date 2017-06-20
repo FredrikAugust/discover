@@ -5,21 +5,20 @@ import Box from 'grommet/components/Box';
 import Heading from 'grommet/components/Heading';
 import Button from 'grommet/components/Button';
 import Anchor from 'grommet/components/Anchor';
+import Paragraph from 'grommet/components/Paragraph';
 
-const FrontPageHero = () => {
-  return (
-    <Box direction='row'>
-      <Box basis='1/2'>
-        <Image full={true} src='https://loremflickr.com/1280/720' />
-      </Box>
-      <Box basis='1/2' pad={{horizontal: 'medium', vertical: 'small'}}>
-        <Heading tag='h2'>Discover new projects all around the world</Heading>
-        <p>Ipsum nesciunt saepe dolore quo eveniet. Tempore beatae doloribus officia eum dolores provident deleniti pariatur.</p>
-        <Button path='/login' primary={true} label='Sign in'/>
-        <Anchor path='/signup' label="Don't have an account? Sign up now" />
-      </Box>
+const FrontPageHero = () => (
+  <Box direction='row'>
+    <Box basis='1/2'>
+      <Image full={true} src='https://loremflickr.com/1280/720' />
     </Box>
-  );
-};
+    <Box basis='1/2' pad={{horizontal: 'medium', vertical: 'small'}}>
+      <Heading tag='h2'>Discover new projects all around the world</Heading>
+      <Paragraph size='large'>Ipsum nesciunt saepe dolore quo eveniet. Tempore beatae doloribus officia eum dolores provident deleniti pariatur.</Paragraph>
+      <Button path='/login' primary={true} label='Sign in'/>
+      <Anchor path='/signup' label="Don't have an account? Sign up now" />
+    </Box>
+  </Box>
+);
 
 export default FrontPageHero;

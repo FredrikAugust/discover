@@ -42,7 +42,6 @@
   },
   "dependencies": {
     "grommet": "^1.4.1",
-    "grommet-addons": "^0.3.0",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
