@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import FrontPage from './FrontPage';
 import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 import Nav from './Nav';
 import FooterNav from './FooterNav';
 
@@ -18,6 +19,7 @@ const Root = ({ store }) => (
             <Nav />
             <Route exact path="/" component={FrontPage} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/signup" component={SignupPage} />
             <FooterNav />
           </div>
         </Router>
