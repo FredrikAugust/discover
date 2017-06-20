@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import FrontPage from './FrontPage';
 import Nav from './Nav';
+import FooterNav from './FooterNav';
 
 import App from 'grommet/components/App';
 
@@ -15,6 +16,7 @@ const Root = ({ store }) => (
         <div>
           <Nav />
           <Route exact path="/" component={FrontPage} />
+          <FooterNav />
         </div>
       </Router>
     </Provider>

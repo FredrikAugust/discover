@@ -36,7 +36,8 @@ class ProjectHighlight extends React.Component {
       <Section pad={{vertical: 'medium'}}>
         <Tiles selectable={true} count={2}>
           {
-            this.props.projects.map((project, index) => (
+            // TODO: implement sorting
+            this.props.projects.slice(0, 3).map((project, index) => (
               <Tile key={index}>
                 <Card 
                   heading={project.title}
