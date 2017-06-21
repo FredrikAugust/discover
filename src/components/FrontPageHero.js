@@ -12,7 +12,7 @@ import LinkAnchor from './LinkAnchor';
 const FrontPageHero = () => (
   <Box direction='row'>
     <Box basis='1/2'>
-      <Image full={true} src='https://loremflickr.com/1280/720' />
+      <Image full={true} src='http://via.placeholder.com/1280x720' />
     </Box>
     <Box basis='1/2' pad={{horizontal: 'medium', vertical: 'small'}}>
       <Heading tag='h2'>Discover new projects all around the world</Heading>
