@@ -10,8 +10,11 @@ import { connect } from 'react-redux';
 
 import { signIn } from '../actions/authenticationActions';
 
-const LoginPage = ({ onLoginFormSubmit }) => (
+import { Redirect } from 'react-router-dom';
+
+const LoginPage = ({ loggedIn, onLoginFormSubmit }) => (
   <Box align='center' justify='center'>
+    { loggedIn ? <Redirect to='/' /> : null }
     <LoginForm onSubmit={onLoginFormSubmit} forgotPassword={
         <div>
           <LinkAnchor to='/signup'>Don't have an account? Sign up</LinkAnchor><br/>
@@ -23,7 +26,7 @@ const LoginPage = ({ onLoginFormSubmit }) => (
 
 export default connect(
   // As we don't need a mapStateToProps now
-  () => ({}),
+  (state) => ({ loggedIn: !!state.currentUser.token }),
   dispatch => ({
     onLoginFormSubmit: credentials => {
       dispatch(signIn(credentials));
