@@ -6,9 +6,13 @@ import Box from 'grommet/components/Box';
 
 import LinkAnchor from './LinkAnchor';
 
-const LoginPage = () => (
+import { connect } from 'react-redux';
+
+import { signIn } from '../actions/authenticationActions';
+
+const LoginPage = ({ onLoginFormSubmit }) => (
   <Box align='center' justify='center'>
-    <LoginForm forgotPassword={
+    <LoginForm onSubmit={onLoginFormSubmit} forgotPassword={
         <div>
           <LinkAnchor to='/signup'>Don't have an account? Sign up</LinkAnchor><br/>
           <LinkAnchor to='/forgotpassword'>Forgot password?</LinkAnchor>
@@ -17,4 +21,12 @@ const LoginPage = () => (
   </Box>
 );
 
-export default LoginPage;
+export default connect(
+  // As we don't need a mapStateToProps now
+  () => ({}),
+  dispatch => ({
+    onLoginFormSubmit: credentials => {
+      dispatch(signIn(credentials));
+    }
+  })
+)(LoginPage);

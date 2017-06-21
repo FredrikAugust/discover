@@ -34,23 +34,24 @@ export function configureStore() {
     users: [
       {
         id: 0,
-        first_name: 'Fredrik August',
-        last_name: 'Madsen-Malmo'
+        firstName: 'Fredrik August',
+        lastName: 'Madsen-Malmo'
       }, {
         id: 3,
-        first_name: 'Kristian',
-        last_name: 'Bondevik Brekke'
+        firstName: 'Kristian',
+        lastName: 'Bondevik Brekke'
       }, {
         id: 2,
-        first_name: 'Eiliv Severin',
-        last_name: 'Iversen Moi'
+        firstName: 'Eiliv Severin',
+        lastName: 'Iversen Moi'
       }
     ],
     currentUser: {
-      token: null,
+      token: '',
+      email: '',
       id: null,
-      first_name: null,
-      last_name: null
+      firstName: '',
+      lastName: ''
     }
   }, applyMiddleware(
     thunkMiddleware,

@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 
 import Anchor from 'grommet/components/Anchor';
 
-const LinkAnchor = (props) => (
-  <Link to={props.to}>
-    <Anchor tag='span'>{props.children}</Anchor>
+const LinkAnchor = ({ to, children }) => (
+  <Link to={to}>
+    <Anchor tag='span'>{children}</Anchor>
   </Link>
 );
 

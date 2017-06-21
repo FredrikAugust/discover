@@ -17,7 +17,9 @@ import { connect } from 'react-redux';
 
 import LinkAnchor from './LinkAnchor';
 
-const Nav = ({ loggedIn }) => (
+import { signOut } from '../actions/authenticationActions';
+
+const Nav = ({ loggedIn, signOut }) => (
   <Header
     fixed={true}>
     <Title><Link to='/'>Discover</Link></Title>
@@ -43,10 +45,8 @@ const Nav = ({ loggedIn }) => (
       </Link>
       {
         loggedIn ?
-          <Link to='/logout'>
-            <Menu icon={<LogoutIcon />}>
-            </Menu>
-          </Link> :
+          <Menu onClick={signOut} icon={<LogoutIcon />}>
+          </Menu> :
           ''
       }
     </Box>
@@ -56,5 +56,8 @@ const Nav = ({ loggedIn }) => (
 export default connect(
   state => ({
     loggedIn: !!state.currentUser.token
+  }),
+  dispatch => ({
+    signOut: () => { dispatch(signOut()); }
   })
 )(Nav);

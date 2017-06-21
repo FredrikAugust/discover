@@ -2,15 +2,16 @@ const SIGN_IN = 'SIGN_IN';
 const SIGN_OUT = 'SIGN_OUT';
 const REGISTER = 'REGISTER';
 
-export function signIn({ email, password }) {
+export function signIn({ username, password, rememberMe }) {
   return {
     type: SIGN_IN,
-    email,
-    password
+    username,
+    password,
+    rememberMe
   };
 }
 
-export function logOut() {
+export function signOut() {
   return {
     type: SIGN_OUT
   };
