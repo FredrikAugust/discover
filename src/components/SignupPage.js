@@ -7,9 +7,16 @@ import FormField from 'grommet/components/FormField';
 import TextInput from 'grommet/components/TextInput';
 import Button from 'grommet/components/Button';
 
-const SignupPage = () => (
+import { connect } from 'react-redux';
+
+import { Redirect } from 'react-router-dom';
+
+import { register } from '../actions/authenticationActions';
+
+const SignupPage = ({ loggedIn, onSignupSubmit }) => (
   <Box align='center' justify='center'>
-    <Form pad='medium'>
+    <Form pad='medium' onSubmit={onSignupSubmit}>
+      { loggedIn ? <Redirect to='/' /> : null }
       <Box></Box>
       <fieldset>
         <FormField label='Email' htmlFor='email'>
@@ -26,10 +33,17 @@ const SignupPage = () => (
         </FormField>
       </fieldset>
       <Box direction='row'>
-        <Button fill={true} primary={true} onClick={() => {}} label='Sign up' />
+        <Button fill={true} primary={true} type='submit' label='Sign up' />
       </Box>
     </Form>
   </Box>
 );
 
-export default SignupPage;
+export default connect(
+  (state) => ({ loggedIn: !!state.currentUser.token }),
+  (dispatch) => ({
+    onSignupSubmit: credentials => {
+      dispatch(register(credentials));
+    }
+  })
+)(SignupPage);

@@ -2,12 +2,11 @@ let authenticationReducer = (state = {}, action) => {
   switch (action.type) {
   case 'SIGN_IN':
     return {
-      ...state,
       token: 'TODO: insert real token',
       id: 0,
       email: action.username,
-      firstName: action.firstName,
-      lastName: action.lastName
+      firstName: 'Get from api',
+      lastName: 'Get from api'
     };
   case 'SIGN_OUT':
     return {
@@ -16,6 +15,14 @@ let authenticationReducer = (state = {}, action) => {
       email: '',
       firstName: '',
       lastName: ''
+    };
+  case 'REGISTER':
+    return {
+      token: 'TODO: insert real token',
+      id: 0,
+      email: action.username,
+      firstName: 'Get from api',
+      lastName: 'Get from api'
     };
   default:
     return state;

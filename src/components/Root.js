@@ -13,17 +13,17 @@ import App from 'grommet/components/App';
 
 const Root = ({ store }) => (
   <App>
-      <Provider store={store}>
-        <Router>
-          <div className='top-div'>
-            <Nav />
-            <Route exact path="/" component={FrontPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/signup" component={SignupPage} />
-            <FooterNav />
-          </div>
-        </Router>
-      </Provider>
+    <Provider store={store}>
+      <Router>
+        <div className='top-div'>
+          <Nav />
+          <Route exact path="/" component={FrontPage} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/signup" component={SignupPage} />
+          <FooterNav />
+        </div>
+      </Router>
+    </Provider>
   </App>
 );
 

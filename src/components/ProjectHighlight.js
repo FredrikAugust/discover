@@ -26,29 +26,29 @@ class ProjectHighlight extends React.Component {
   render() {
     return (
       <Section pad={{vertical: 'medium'}}>
-        <Heading tag='h2'>View trending projects</Heading>   
+        <Heading tag='h2'>View trending projects</Heading>
         <Select options={[
           'Today',
           'This week',
           'This month'
         ]} value={this.state.selectedSort}
         onChange={this.onSelectChange} />
-      <Section pad={{vertical: 'medium'}}>
-        <Tiles selectable={true} count={2}>
-          {
-            // TODO: implement sorting
-            this.props.projects.slice(0, 3).map((project, index) => (
-              <Tile key={index}>
-                <Card 
-                  heading={project.title}
-                  description={project.description}
-                  label={project.categories[0]} />
-              </Tile>
-            ))
-          }
-        </Tiles>
+        <Section pad={{vertical: 'medium'}}>
+          <Tiles selectable={true} count={2}>
+            {
+              // TODO: implement sorting
+              this.props.projects.slice(0, 3).map((project, index) => (
+                <Tile key={index}>
+                  <Card
+                    heading={project.title}
+                    description={project.description}
+                    label={project.categories[0]} />
+                </Tile>
+              ))
+            }
+          </Tiles>
+        </Section>
       </Section>
-    </Section>
     );
   }
 }
